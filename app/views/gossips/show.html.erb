@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @gossip.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @gossip.text %>
+</p>
+
+
+ <!-- Comments block> -->
+
+<h2>Comments</h2>
+<% @gossip.comments.each do |comment| %>
+   <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+
+<h2>Add a comment:</h2>
+<%= form_with(model: [ @gossip, @gossip.comments.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<!-- Comments block> -->
+
+
+
+<%= link_to 'Edit', edit_gossip_path(@gossip) %> |
+<%= link_to 'Back', gossips_path %>
