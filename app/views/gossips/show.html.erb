@@ -11,11 +11,15 @@
 </p>
 
 
+
+
  <!-- Comments block> -->
 
 <h2>Comments</h2>
 <% @gossip.comments.each do |comment| %>
    <p>
+   <strong>Commenter:</strong>
+
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
@@ -36,7 +40,7 @@
     <%= form.submit %>
   </p>
 <% end %>
-<!-- Comments block> -->
+<!-- End of Comments block> -->
 
 
 

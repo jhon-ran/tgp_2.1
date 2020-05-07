@@ -29,6 +29,7 @@ class GossipsController < ApplicationController
   def create
     @gossip = Gossip.new(gossip_params)
 
+
     respond_to do |format|
       if @gossip.save
         format.html { redirect_to @gossip, notice: 'Gossip was successfully created.' }
